@@ -1,0 +1,14 @@
+
+<div *ngIf="winner && loser" class="col-11 mx-auto row">
+  <div class="col-6">
+    <h1 class="text-success">1st Place</h1>
+    <h6 class="text-success">{{winner['username']}}(Score: {{getScore(winner)}})</h6>
+    <h1 class="text-danger">2nd Place</h1>
+    <h6 class="text-danger">{{loser['username']}}(Score: {{getScore(loser)}})</h6>
+  </div>
+  <div class="col-6 card">
+      <img src="{{winner['avatarUrl']}}" class="d-flex mx-auto">
+      <p class="text-center">{{winner['username']}}</p> 
+  </div>
+  <button [routerLink]="['/']" class="btn btn-dark d-flex mx-auto my-4">Reset</button>
+</div>

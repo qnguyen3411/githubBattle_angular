@@ -1,0 +1,38 @@
+<div class="card-deck">
+  <div class="card">
+    <h5 class="card-header">Player 1</h5>
+
+    <form *ngIf="!user1" (submit)="searchUser(user1NameField, 1)" class="col-11 mx-auto">
+      <div class="form-group">
+        <label for="">Github Username:</label>
+        <input type="text" class="form-control" name="user1NameField" [(ngModel)]="user1NameField">
+        <p *ngIf="error1" class="text-danger font-weight-bold">Github username does not exist, try again</p>
+        <input [disabled]="!user1NameField" type="submit" value="Get User" class="btn btn-dark col-12">
+      </div>
+    </form>
+    <div *ngIf="user1" class="col-12">
+      <img src="{{user1['avatarUrl']}}" class="d-flex mx-auto">
+      <p class="text-center">{{user1['username']}}</p>
+    </div>
+  </div>
+
+
+  <div class="card">
+    <h5 class='card-header'>Player 2</h5>
+    <form *ngIf="!user2" (submit)="searchUser(user2NameField, 2)" class="col-11 mx-auto">
+      <div class="form-group">
+        <label for="">Github Username:</label>
+        <input type="text" class="form-control" name="user2NameField" [(ngModel)]="user2NameField">
+        <p *ngIf="error2" class="text-danger font-weight-bold">Github username does not exist, try again</p>
+        <input [disabled]="!user2NameField" type="submit" value="Get User" class="btn btn-dark col-12">
+      </div>
+    </form>
+    <div *ngIf="user2" class="col-12">
+      
+      <img src="{{user2['avatarUrl']}}" class="d-flex mx-auto">
+      <p class="text-center">{{user2['username']}}</p>
+    </div>
+  </div>
+
+  <button *ngIf="user1 && user2" (click)="startBattle()" class="col-12 btn btn-warning d-block mt-2">Battle!!!!111one1one</button>
+</div>

@@ -1,0 +1,15 @@
+<h3>Rankings</h3>
+<ol class="list-group col-11 mx-auto" style="overflow: scroll; height: 80vh">
+  
+  <li *ngFor="let user of users; let i = index" class="list-group-item">
+    <div class="row">
+      <h5 class="col-1">{{i + 1}}</h5>
+      <div class="col-6 card">
+          <img src="{{user['avatarUrl']}}" class="d-flex mx-auto">
+          <p class="text-center">{{user['username']}}</p> 
+      </div>
+      <h5 class="col-4">Score: {{users[i]['score']}}</h5>
+    </div>
+  </li>
+  
+</ol>
